@@ -1,14 +1,14 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     text-align: center;
     transition: background 0.3s ease;
 }
 
-/* Light/Dark Mode */
+/* Light & Dark Mode */
 body.light {
-    background: #f0f0f0;
+    background: #f8f8f8;
     color: #333;
 }
 
@@ -17,13 +17,13 @@ body.dark {
     color: #fff;
 }
 
-/* Background Pattern */
+/* Background */
 .background {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: url('assets/background-pattern.svg') repeat;
-    opacity: 0.1;
+    background: url('assets/ios-background.jpg') center/cover no-repeat;
+    opacity: 0.15;
     z-index: -1;
 }
 
@@ -31,7 +31,13 @@ body.dark {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
+}
+
+.app-logo {
+    width: 50px;
+    height: 50px;
 }
 
 #darkModeToggle {
@@ -41,33 +47,42 @@ header {
     cursor: pointer;
 }
 
-/* Glassmorphism Card */
-.glass-container {
-    margin: 100px auto;
-    padding: 40px;
-    width: 80%;
+/* iOS-Style Cards */
+.ios-card {
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
     max-width: 400px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.glass-container:hover {
-    transform: scale(1.05);
+.ios-card:hover {
+    transform: scale(1.02);
 }
 
-/* Button */
-.roblox-login {
+/* iOS-Style Buttons */
+.ios-button {
     padding: 15px 20px;
-    background: #ffcc00;
+    background: #007aff;
+    color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 10px;
     font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.roblox-login:hover {
-    background: #e6b800;
+.ios-button:hover {
+    background: #005ecb;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
 }
