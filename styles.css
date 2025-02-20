@@ -1,30 +1,25 @@
-/* General Styles */
-body {
+/* Reset */
+* {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #a8e063, #56ab2f);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
     text-align: center;
-    transition: background 0.3s ease;
-}
-
-/* Light & Dark Mode */
-body.light {
-    background: #f8f8f8;
-    color: #333;
-}
-
-body.dark {
-    background: #121212;
-    color: #fff;
-}
-
-/* Background */
-.background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: url('assets/ios-background.jpg') center/cover no-repeat;
-    opacity: 0.15;
-    z-index: -1;
 }
 
 /* Header */
@@ -32,57 +27,64 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    margin-bottom: 30px;
 }
 
-.app-logo {
-    width: 50px;
-    height: 50px;
-}
-
-#darkModeToggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* iOS-Style Cards */
-.ios-card {
-    margin: 20px auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.ios-card:hover {
-    transform: scale(1.02);
-}
-
-/* iOS-Style Buttons */
-.ios-button {
-    padding: 15px 20px;
-    background: #007aff;
+.logo {
+    font-size: 2rem;
     color: white;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: background 0.3s;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
 }
 
-.ios-button:hover {
-    background: #005ecb;
+.login-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
-/* Footer */
-footer {
-    margin-top: 30px;
-    font-size: 14px;
-    opacity: 0.8;
+/* Cards styling */
+main {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    color: #fff;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
 }
