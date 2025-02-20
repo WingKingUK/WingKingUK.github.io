@@ -5,12 +5,12 @@ const body = document.body;
 toggleBtn.addEventListener("click", () => {
     body.classList.toggle("dark");
     body.classList.toggle("light");
-    
+
     // Change icon
     toggleBtn.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-// Set initial mode
+// Set initial mode based on system preference
 if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     body.classList.add("dark");
 } else {
