@@ -3,13 +3,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
 }
 
+/* Light and Dark Mode Variables */
+:root {
+    --bg-color-light: #fff;
+    --text-color-light: #333;
+    --bg-color-dark: #1e1e2e;
+    --text-color-dark: #fff;
+    --primary-color: #f76b1c;
+    --secondary-color: #ffcc00;
+}
+
+/* Default Light Mode */
 body {
-    background-color: #1e1e2e;
-    color: #ffffff;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
     text-align: center;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
 }
 
 /* Header */
@@ -18,14 +36,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #282a36;
+    background-color: var(--primary-color);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #7289da;
+    color: white;
 }
 
 nav ul {
@@ -39,19 +57,28 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: white;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #7289da;
+    color: var(--secondary-color);
+}
+
+/* Light/Dark Mode Toggle */
+#mode-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
 }
 
 /* Hero Section */
 .hero {
     padding: 100px 20px;
-    background: linear-gradient(135deg, #7289da, #4b5a91);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
 }
 
@@ -60,9 +87,8 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.hero span {
+    font-weight: bold;
 }
 
 /* Discord Login Button */
@@ -99,31 +125,49 @@ nav ul li a:hover {
 }
 
 .card {
-    background: #33354a;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 8px;
     width: 300px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .card:hover {
     transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .card h2 {
     font-size: 22px;
     margin-bottom: 10px;
-    color: #7289da;
-}
-
-.card p {
-    font-size: 16px;
+    color: var(--primary-color);
 }
 
 /* Footer */
 footer {
     margin-top: 50px;
     padding: 20px;
-    background-color: #282a36;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Abstract Shapes */
+.abstract-shape {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+}
+
+.shape1 {
+    top: 10%;
+    left: 10%;
+}
+
+.shape2 {
+    bottom: 15%;
+    right: 15%;
 }
