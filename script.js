@@ -1,14 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const modeToggle = document.getElementById("mode-toggle");
+// Dark Mode Toggle
+const toggleBtn = document.getElementById("darkModeToggle");
+const body = document.body;
 
-    if (localStorage.getItem("dark-mode") === "enabled") {
-        document.body.classList.add("dark-mode");
-        modeToggle.textContent = "☀️";
-    }
-
-    modeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode") ? "enabled" : "disabled");
-        modeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    });
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    body.classList.toggle("light");
+    
+    // Change icon
+    toggleBtn.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
 });
+
+// Set initial mode
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    body.classList.add("dark");
+} else {
+    body.classList.add("light");
+}
