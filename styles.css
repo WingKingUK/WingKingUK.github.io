@@ -13,10 +13,6 @@
     --bg-dark: linear-gradient(135deg, #1e1e2e, #111);
     --text-light: #333;
     --text-dark: #fff;
-    --card-bg-light: rgba(255, 255, 255, 0.2);
-    --card-bg-dark: rgba(0, 0, 0, 0.3);
-    --glass-border-light: rgba(255, 255, 255, 0.4);
-    --glass-border-dark: rgba(255, 255, 255, 0.1);
 }
 
 /* Default Light Mode */
@@ -34,7 +30,7 @@ body.dark-mode {
     color: var(--text-dark);
 }
 
-/* Header */
+/* Header (Only the bar remains, no nav) */
 header {
     display: flex;
     justify-content: space-between;
@@ -45,31 +41,12 @@ header {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Logo */
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: white;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
 }
 
 /* Light/Dark Mode Toggle */
@@ -83,14 +60,18 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    padding: 100px 20px;
+    padding: 80px 20px;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(15px);
     border-radius: 15px;
     color: white;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
 }
 
+/* Hero Title */
 .hero h1 {
     font-size: 40px;
     margin-bottom: 10px;
@@ -102,10 +83,16 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
+/* Discord Button Centering */
+.discord-button-container {
+    margin-top: 30px; /* Added spacing */
+}
+
 /* Discord Login Button */
 .discord-login {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     background: #5865F2;
     color: white;
     padding: 12px 20px;
@@ -123,6 +110,7 @@ nav ul li a:hover {
 
 .discord-login:hover {
     background: #4752C4;
+    transform: scale(1.05);
 }
 
 /* Info Cards */
@@ -136,22 +124,32 @@ nav ul li a:hover {
 }
 
 .card {
-    background: var(--card-bg-light);
+    background: rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 15px;
     width: 300px;
     backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border-light);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode .card {
-    background: var(--card-bg-dark);
-    border: 1px solid var(--glass-border-dark);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card:hover {
     transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    color: white;
 }
 
 /* Floating Neon Glow */
