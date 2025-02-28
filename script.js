@@ -1,18 +1,21 @@
-// Dark Mode Toggle
-const toggleBtn = document.getElementById("darkModeToggle");
-const body = document.body;
+document.addEventListener("DOMContentLoaded", function () {
+    const testimonials = document.querySelectorAll(".testimonial");
+    let index = 0;
 
-toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    body.classList.toggle("light");
+    function showTestimonial() {
+        testimonials.forEach((testimonial, i) => {
+            testimonial.style.display = i === index ? "block" : "none";
+        });
+    }
 
-    // Change icon
-    toggleBtn.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
+    function nextTestimonial() {
+        index = (index + 1) % testimonials.length;
+        showTestimonial();
+    }
+
+    // Auto-change testimonials every 4 seconds
+    setInterval(nextTestimonial, 4000);
+
+    // Show the first testimonial by default
+    showTestimonial();
 });
-
-// Set initial mode based on system preference
-if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    body.classList.add("dark");
-} else {
-    body.classList.add("light");
-}
